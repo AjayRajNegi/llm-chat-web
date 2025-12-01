@@ -1,7 +1,8 @@
 // app/api/chat/route.js
+import { NextRequest } from "next/server";
 import ollama from "ollama";
 
-export async function POST(req) {
+export async function POST(req: NextRequest) {
   const { model, prompt } = await req.json();
 
   const response = await ollama.chat({
